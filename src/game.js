@@ -4,15 +4,8 @@ export default class Game {
         this.readline = readline;
     }
 
-    clearTerminal() {
-        for (let i = 0; i < 50; i++) {
-            console.log("");
-        }
-
-    }
-
     start() {
-        this.clearTerminal();
+        console.clear();
 
         this.board.init();
         this.board.generateMines();
@@ -48,14 +41,14 @@ export default class Game {
     }
 
     promptPosition() {
-        this.clearTerminal();
+        console.clear();
         this.board.print();
 
         console.log("Enter a position (row, col)");
         console.log("Start line with F to put a flag")
 
         this.readline.question("", (line) => {
-            this.clearTerminal();
+            console.clear();
 
             line = line.toUpperCase();
 
